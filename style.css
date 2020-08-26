@@ -1,112 +1,115 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
-html{
-    height: 100%;
-    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
+html {
+	height: 100%;
+	overflow: hidden;
+	background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+	background-size: contain;
+	background-repeat: no-repeat;
 }
-body{
-    height: 100%;
-      background: url('../Spider_WebDev_Task_2/image/Covid.png') 0% 85% no-repeat,
-      url('../Spider_WebDev_Task_2/image/Covid.png') 30% 30% no-repeat,
-      url('../Spider_WebDev_Task_2/image/Covid.png') 5% 10% no-repeat,
-      url('../Spider_WebDev_Task_2/image/Covid.png') 90% 55% no-repeat,
-      url('../Spider_WebDev_Task_2/image/Covid.png') 45% 100% no-repeat,
-      url('../Spider_WebDev_Task_2/image/Covid.png') 67% 5% no-repeat,
-      url('../Spider_WebDev_Task_2/image/Covid.png') 100% 0% no-repeat;
+body {
+	height: 100%;
+	overflow: auto;
+	background: url('../Spider_WebDev_Task_2/image/Covid.png') 0% 85% no-repeat,
+		url('../Spider_WebDev_Task_2/image/Covid.png') 30% 30% no-repeat,
+		url('../Spider_WebDev_Task_2/image/Covid.png') 5% 10% no-repeat,
+		url('../Spider_WebDev_Task_2/image/Covid.png') 90% 55% no-repeat,
+		url('../Spider_WebDev_Task_2/image/Covid.png') 45% 100% no-repeat,
+		url('../Spider_WebDev_Task_2/image/Covid.png') 67% 5% no-repeat,
+		url('../Spider_WebDev_Task_2/image/Covid.png') 100% 0% no-repeat;
 
-      background-size: 300px;
-
-}
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    outline: none;
+	background-size: 300px;
 }
 
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
 
-h1{
-    text-transform: uppercase;
+h1 {
+	text-transform: uppercase;
     font-size: 50px;
-    text-align: center;
-    margin: 30px auto;
-    font-family: 'Fredoka One', cursive;
-    
+    color: black;
+	text-align: center;
+	margin: 30px auto;
+	font-family: 'Fredoka One', cursive;
 }
-.quiz-page .queans-box{
-    margin:10px auto;
-    width: 700px;
-    background-color:#d9eaec ;
-    height: 550px;
-    border: black solid 5px;
-    border-radius: 10px;
-    padding: 30px;
+.quiz-page .queans-box {
+	margin: 10px auto;
+	width: 900px;
+	background-color: #d9eaec;
+	height: 550px;
+	border: black solid 5px;
+	border-radius: 10px;
+	padding: 15px;
 }
-.quiz-page .info-box{
-    margin:0 auto;
-    padding: 10px;
-    width: 700px;
-    background-color:#d9eaec ;
-    height: 70px;
-    border: black solid 5px;
-    border-radius: 10px;
+.quiz-page .info-box {
+	margin: 0 auto;
+	padding: 10px;
+	width: 900px;
+	background-color: #d9eaec;
+	height: 70px;
+	border: black solid 5px;
+	border-radius: 10px;
 }
-
-#que{
-    text-transform: capitalize;
-    font-size: 25px;
+.questions{
     height: 100px;
-    padding-bottom: 25px;
-    text-align: center;
-    margin: 20px auto;
-    font-family: 'Fredoka One', cursive;
 }
-
-.options .btn{
-    width: 100%;
-    font-family: 'Alata', sans-serif;
-    font-size: 30px;
-    margin: 10px auto;
-    text-transform: capitalize;
-    background-color: inherit;
-    border: 2px solid black;
-    border-radius: 5px;
+#que {
+	text-transform: capitalize;
+	font-size: 27px;
+	/* height: 100px; */
+	 padding: 15px; 
+     text-align: center;
+	margin: 20px auto;
+	font-family: 'Fredoka One', cursive;
 }
-.nav-next{
-    float: right;
-    border: none;
-    border-radius: 5px;
+.options{
+    margin:20px auto ;
+}
+.options .btn {
+	width: 100%;
+	height: 50px;
+	font-family: 'Alata', sans-serif;
+	font-size: inheri9;
+	margin: 10px auto;
+	text-transform: capitalize;
+	background-color: inherit;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+.nav-next {
+	float: right;
+	border: none;
+	border-radius: 5px;
+	font-size: 30px;
+	margin: 20px auto;
+	background-color: inherit;
+	width: 100px;
+	font-family: 'Alata', sans-serif;
+	border: 2px solid black;
+}
+.nav-prev {
+	float: left;
+	border: none;
+	border-radius: 5px;
+	margin: 20px auto;
+	font-size: 30px;
+	background-color: inherit;
+	width: 100px;
+	font-family: 'Alata', sans-serif;
+	border: 2px solid black;
+}
+.score {
+	font-family: 'Alata', sans-serif;
     font-size: 30px;
-    margin: 20px auto;
-    background-color: inherit;
-    width: 100px;
-    font-family: 'Alata', sans-serif;
-    border: 2px solid black;
+    margin-left: 10px;
     
 }
-.nav-prev{
-    float: left;
-    border: none;
-    border-radius: 5px;
-    margin: 20px auto;
+.quenumber {
+	font-family: 'Alata', sans-serif;
     font-size: 30px;
-    background-color: inherit;
-    width: 100px;
-    font-family: 'Alata', sans-serif;border: 2px solid black;
-    
-}
-.score{
-    font-family: 'Alata', sans-serif ;
-    font-size:30px;
-    margin:0 40 px ;
-
-}
-.quenumber{
-    font-family: 'Alata', sans-serif ;
-    font-size:30px;
-    padding-left:120px ;
-
+    margin: 0 250px;
 }

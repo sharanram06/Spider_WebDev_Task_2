@@ -28,7 +28,7 @@ const queAndAns = [
 	{
 		que: 'Thailand announced that it has proceeded to test its novel coronavirus vaccine on which animal/bird?',
 		ans: 'Monkeys',
-		opt: [ 'Mokeys', 'Lizards', 'Hens', 'Kites' ]
+		opt: [ 'Monkeys', 'Lizards', 'Hens', 'Kites' ]
 	},
 	{
 		que: ' In a study, which cells are found in COVID-19 patients bode well for long term immunity?',
@@ -70,10 +70,10 @@ const queAndAns = [
 
 const question = document.getElementById('que');
 const questionNumber = document.querySelector('.quenumber');
-const score = document.querySelectorAll('.score');
-const options = document.querySelectorAll('.options');
+const score = document.querySelector('.score');
+const options = document.querySelector('.options');
 let questionsRemaining = [];
-let currentQuestion;
+let currentQueAndAns;
 let currentOptions=[];
 const randomQueAndAns = [];
 const getRandomQueAndAns = () => {
@@ -88,15 +88,21 @@ const getRandomQueAndAns = () => {
 
 let questionCount = 0;
 const fixQueAndAns = () => {
-    currentQuestion = randomQueAndAns[questionCount];
-    question.innerHTML = currentQuestion.que;
+    currentQueAndAns = randomQueAndAns[questionCount];
+    question.innerHTML = currentQueAndAns.que;
     questionNumber.innerHTML = questionCount + 1 + ' of 10';
+    options.innerHTML=" "
     for(i=0; i<4; i++){
-        currentOptions.push(currentQuestion.opt[i])
-        console.log(currentOptions)
+        currentOptions.push(currentQueAndAns.opt[i])
     }
-    
-	
+    for(i=0; i<4; i++){
+        const optionElement=document.createElement("button")
+        optionElement.innerHTML= currentOptions[i]
+        optionElement.className ="btn" 
+        options.appendChild(optionElement)
+    }
+    currentOptions=[]
+
 };
 const nextQue = () => {
 	if (questionCount == 9) {
