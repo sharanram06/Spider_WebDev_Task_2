@@ -17,23 +17,26 @@
     <div class="container quiz-page">
         <div class="info-box">
             <span class="score">Score - 0</span>
-            <span class="question-number">1 of 10</span>
+            <span class="quenumber"></span>
         </div>
         <div class="queans-box">
             <div class="questions">
-                <div id="que">Which country has the most deaths due to covid?</div>
+                <div id="que"> </div>
             </div>
-            <div class="answers">
-                <button class="btn">russia</button>
+            <div class="options">
+                <!-- <button class="btn">russia</button>
                 <button class="btn">india</button>
                 <button class="btn">USA</button>
-                <button class="btn">Brazil</button>
+                <button class="btn">Brazil</button> -->
             </div> 
-            <button class="nav-next">Next</button> 
-            <button class="nav-prev">Prev</button> 
+            <div class="nav">
+                <button class="nav-next" onclick="nextQue()">Next</button> 
+                <button class="nav-prev" onclick="prevQue()">Prev</button> 
+            </div>
+
         </div>
    </div>
-
+   <script type="text/javascript"   src="script.js"></script>
     
 </body>
 </html>

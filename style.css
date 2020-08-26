@@ -37,13 +37,13 @@ h1{
     
 }
 .quiz-page .queans-box{
-    margin:20px auto;
+    margin:10px auto;
     width: 700px;
     background-color:#d9eaec ;
-    height: 500px;
+    height: 550px;
     border: black solid 5px;
     border-radius: 10px;
-    padding: 50px;
+    padding: 30px;
 }
 .quiz-page .info-box{
     margin:0 auto;
@@ -57,22 +57,16 @@ h1{
 
 #que{
     text-transform: capitalize;
-    font-size: 30px;
-    padding-bottom: 30px;
+    font-size: 25px;
+    height: 100px;
+    padding-bottom: 25px;
     text-align: center;
-    margin: 0 auto;
+    margin: 20px auto;
     font-family: 'Fredoka One', cursive;
+}
 
-
-}
-.img-left{
-    float: left;
-}
-.img-right{
-    float: right;
-}
-.answers .btn{
-    width: 590px;
+.options .btn{
+    width: 100%;
     font-family: 'Alata', sans-serif;
     font-size: 30px;
     margin: 10px auto;
@@ -91,6 +85,7 @@ h1{
     width: 100px;
     font-family: 'Alata', sans-serif;
     border: 2px solid black;
+    
 }
 .nav-prev{
     float: left;
@@ -101,16 +96,17 @@ h1{
     background-color: inherit;
     width: 100px;
     font-family: 'Alata', sans-serif;border: 2px solid black;
+    
 }
 .score{
     font-family: 'Alata', sans-serif ;
     font-size:30px;
-    margin: 10px 20px;
+    margin:0 40 px ;
 
 }
-.question-number{
+.quenumber{
     font-family: 'Alata', sans-serif ;
     font-size:30px;
-    margin: 10px 120px;
+    padding-left:120px ;
 
 }
