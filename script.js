@@ -6,7 +6,7 @@ const queAndAns = [
 	},
 	{
 		que: 'What do doctors suggest as a cure for coronavirus?',
-		ans: 'A combination of lemon and bicarbonate discovered to be effective in Israel',
+		ans: 'There is no cure yet; all of the above are false',
 		opt: [
 			'Hot water gargle',
 			'Alkaline foods with pH level above that of coronavirus',
@@ -38,8 +38,8 @@ const queAndAns = [
 	{
 		que:
 			'Name a clinical trial in which blood is transfused from recovered COVID-19 patients to a coronavirus patient who is in critical condition?',
-		ans: ' Plasma Therapy',
-		opt: [ 'Remdesivir', ' Plasma Therapy', 'Solidarity', 'Hydroxychloroquine' ]
+		ans: 'Plasma Therapy',
+		opt: [ 'Remdesivir', 'Plasma Therapy', 'Solidarity', 'Hydroxychloroquine' ]
 	},
 	{
 		que: 'What happens to a person suffering from COVID-19?',
@@ -63,18 +63,19 @@ const queAndAns = [
 	},
 	{
 		que: 'The first case of novel coronavirus was identified in',
-		ans: 'Wuhan, Hubei ',
+		ans: 'Wuhan, Hubei',
 		opt: [ 'Beijing', 'Shanghai', 'Wuhan, Hubei', 'Tianjin' ]
 	}
 ];
 
 const question = document.getElementById('que');
 const questionNumber = document.querySelector('.quenumber');
-const score = document.querySelector('.score');
+const scoreText = document.querySelector('.score');
+let score = 0;
 const options = document.querySelector('.options');
 let questionsRemaining = [];
 let currentQueAndAns;
-let currentOptions=[];
+let currentOptions = [];
 const randomQueAndAns = [];
 const getRandomQueAndAns = () => {
 	for (let i = queAndAns.length - 1; i > 0; i--) {
@@ -88,22 +89,37 @@ const getRandomQueAndAns = () => {
 
 let questionCount = 0;
 const fixQueAndAns = () => {
-    currentQueAndAns = randomQueAndAns[questionCount];
-    question.innerHTML = currentQueAndAns.que;
-    questionNumber.innerHTML = questionCount + 1 + ' of 10';
-    options.innerHTML=" "
-    for(i=0; i<4; i++){
-        currentOptions.push(currentQueAndAns.opt[i])
-    }
-    for(i=0; i<4; i++){
-        const optionElement=document.createElement("button")
-        optionElement.innerHTML= currentOptions[i]
-        optionElement.className ="btn" 
-        options.appendChild(optionElement)
-    }
-    currentOptions=[]
-
+	currentQueAndAns = randomQueAndAns[questionCount];
+	question.innerHTML = currentQueAndAns.que;
+	questionNumber.innerHTML = questionCount + 1 + ' of 10';
+	options.innerHTML = ' ';
+	for (i = 0; i < 4; i++) {
+		currentOptions.push(currentQueAndAns.opt[i]);
+	}
+	for (i = 0; i < 4; i++) {
+		const optionElement = document.createElement('button');
+		optionElement.innerHTML = currentOptions[i];
+		optionElement.className = 'btn';
+		optionElement.setAttribute('onclick', 'checkAnswer(this)');
+		options.appendChild(optionElement);
+	}
+	currentOptions = [];
 };
+const checkAnswer = (option) => {
+	if (option.innerHTML === currentQueAndAns.ans) {
+		score++;
+		scoreText.innerHTML = 'Score - ' + score;
+		option.classList.add('green');
+	} else {
+		option.classList.add('red');
+		for (i = 0; i < 4; i++) {
+			if (options.children[i].innerText == currentQueAndAns.ans) {
+				option.classList.add('green');
+			}
+		}
+	}
+};
+
 const nextQue = () => {
 	if (questionCount == 9) {
 		endQuiz();

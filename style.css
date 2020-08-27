@@ -13,10 +13,11 @@ body {
 	background: url('../Spider_WebDev_Task_2/image/Covid.png') 0% 85% no-repeat,
 		url('../Spider_WebDev_Task_2/image/Covid.png') 30% 30% no-repeat,
 		url('../Spider_WebDev_Task_2/image/Covid.png') 5% 10% no-repeat,
-		url('../Spider_WebDev_Task_2/image/Covid.png') 90% 55% no-repeat,
-		url('../Spider_WebDev_Task_2/image/Covid.png') 45% 100% no-repeat,
-		url('../Spider_WebDev_Task_2/image/Covid.png') 67% 5% no-repeat,
-		url('../Spider_WebDev_Task_2/image/Covid.png') 100% 0% no-repeat;
+		url('../Spider_WebDev_Task_2/image/Covid.png') 95% 85% no-repeat,
+		url('../Spider_WebDev_Task_2/image/Covid.png') 25% 100% no-repeat,
+		url('../Spider_WebDev_Task_2/image/Covid.png') 80% 5% no-repeat,
+        /* url('../Spider_WebDev_Task_2/image/Covid.png') 100% 0% no-repeat, */
+        url('../Spider_WebDev_Task_2/image/Covid.png') 60% 95% no-repeat;
 
 	background-size: 300px;
 }
@@ -46,7 +47,10 @@ h1 {
 	padding: 15px;
 }
 .quiz-page .info-box {
-	margin: 0 auto;
+    margin: 0 auto;
+    font-family: 'Alata', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
 	padding: 10px;
 	width: 900px;
 	background-color: #d9eaec;
@@ -71,14 +75,22 @@ h1 {
 }
 .options .btn {
 	width: 100%;
-	height: 50px;
+    height: 50px;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
 	font-family: 'Alata', sans-serif;
-	font-size: inheri9;
+    font-size: 18px;
+    font-weight: 800;
 	margin: 10px auto;
 	text-transform: capitalize;
-	background-color: inherit;
+	/* background-color: inherit; */
 	border: 2px solid black;
 	border-radius: 5px;
+}
+.options .btn.green{
+    background: linear-gradient(to top, #52c234, #144602);
+}
+.options .btn.red{
+    background: linear-gradient(to top, #e52d27, #b31217);;
 }
 .nav-next {
 	float: right;
@@ -89,7 +101,8 @@ h1 {
 	background-color: inherit;
 	width: 100px;
 	font-family: 'Alata', sans-serif;
-	border: 2px solid black;
+    border: 2px solid black;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
 }
 .nav-prev {
 	float: left;
@@ -100,7 +113,8 @@ h1 {
 	background-color: inherit;
 	width: 100px;
 	font-family: 'Alata', sans-serif;
-	border: 2px solid black;
+    border: 2px solid black;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
 }
 .score {
 	font-family: 'Alata', sans-serif;
@@ -113,3 +127,8 @@ h1 {
     font-size: 30px;
     margin: 0 250px;
 }
+
+/* {background: #000000; 
+background: -webkit-linear-gradient(to right, #e74c3c, #000000);  
+background: linear-gradient(to right, #e74c3c, #000000); } */
+/* background: linear-gradient(to right, #52c234, #061700); */
