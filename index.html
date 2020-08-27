@@ -31,10 +31,27 @@
             </div> 
             <div class="nav">
                 <button class="nav-next" onclick="nextQue()">Next</button> 
-                <button class="nav-prev" onclick="prevQue()">Prev</button> 
+                <button class="nav-prev invisible" onclick="prevQue()">Prev</button> 
             </div>
 
         </div>
+   </div>
+   <div class="container result-page invisible">
+       <h1>Result</h1>
+       <div class="scoreboard">
+           <span>SCORE</span>
+           <span class="resultscore right"></span>
+       </div>
+       <div class="scoreboard">
+            <span>ATTEMPT</span>
+            <span class="resultattempt right"></span>
+       </div>
+       <div class="scoreboard">
+            <span>CORRECT</span>
+            <span class="resultcorrect right"></span>
+       </div>
+       <button class="tryagain" onclick="tryagain()">Try Again</button>
+
    </div>
    <script type="text/javascript"   src="script.js"></script>
     

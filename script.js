@@ -72,11 +72,20 @@ const question = document.getElementById('que');
 const questionNumber = document.querySelector('.quenumber');
 const scoreText = document.querySelector('.score');
 let score = 0;
+const scoreElement = document.querySelector('.resultscore');
+let attempt = 0;
+const attemptElement = document.querySelector('.resultattempt');
+let correct = 0;
+const correctElement = document.querySelector('.resultcorrect');
 const options = document.querySelector('.options');
 let questionsRemaining = [];
 let currentQueAndAns;
 let currentOptions = [];
 const randomQueAndAns = [];
+const quizPage = document.querySelector('.quiz-page');
+const resultPage = document.querySelector('.result-page');
+const navNext= document.querySelector('.nav-next')
+const navPrev= document.querySelector('.nav-prev')
 const getRandomQueAndAns = () => {
 	for (let i = queAndAns.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
@@ -106,24 +115,46 @@ const fixQueAndAns = () => {
 	currentOptions = [];
 };
 const checkAnswer = (option) => {
+	attempt++;
 	if (option.innerHTML === currentQueAndAns.ans) {
 		score++;
+		correct++;
 		scoreText.innerHTML = 'Score - ' + score;
 		option.classList.add('green');
 	} else {
 		option.classList.add('red');
 		for (i = 0; i < 4; i++) {
-			if (options.children[i].innerText == currentQueAndAns.ans) {
-				option.classList.add('green');
+			console.log(options.children[i].innerHTML);
+			console.log(currentQueAndAns.ans);
+			console.log(options.children[i].innerHTML == currentQueAndAns.ans);
+			if (options.children[i].innerHTML == currentQueAndAns.ans) {
+				options.children[i].classList.add('green');
 			}
 		}
 	}
+	removePointer();
 };
-
+const removePointer = () => {
+	for (i = 0; i < 4; i++) {
+		options.children[i].classList.add('removepointer');
+	}
+};
 const nextQue = () => {
-	if (questionCount == 9) {
+    if(questionCount == 0)
+    {navPrev.classList.remove("invisible")
+    navNext.innerHTML="Next"
+    questionCount++;
+    fixQueAndAns()
+    }
+    else if(questionCount == 8){
+       navNext.innerHTML="Result"
+       questionCount++;
+       fixQueAndAns();
+    }
+	else if (questionCount == 9) {
 		endQuiz();
 	} else {
+        navNext.innerHTML="Next"
 		questionCount++;
 		fixQueAndAns();
 	}
@@ -131,10 +162,31 @@ const nextQue = () => {
 const prevQue = () => {
 	if (questionCount == 0) {
 		questionCount = 0;
-	} else {
+    }
+    else if(questionCount==1){
+        navPrev.classList.add("invisible")
+        questionCount--;
+		fixQueAndAns();
+    } 
+    else if(questionCount==9){
+        navNext.innerHTML="Next"
+        questionCount--;
+		fixQueAndAns();
+    }
+     else {
 		questionCount--;
 		fixQueAndAns();
 	}
+};
+const endQuiz = () => {
+	quizPage.classList.add('invisible');
+	resultPage.classList.remove('invisible');
+	scoreElement.innerHTML = score;
+	attemptElement.innerHTML = attempt;
+	correctElement.innerHTML = correct;
+};
+const tryagain = () => {
+    location.reload();
 };
 window.onload = () => {
 	getRandomQueAndAns();
