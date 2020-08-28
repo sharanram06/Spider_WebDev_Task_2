@@ -31,7 +31,6 @@ body {
 h1 {
 	text-transform: uppercase;
     font-size: 50px;
-    color: black;
 	text-align: center;
 	margin: 30px auto;
 	font-family: 'Fredoka One', cursive;
@@ -55,7 +54,7 @@ h1 {
     font-size: 18px;
     font-weight: 800;
 	padding: 10px;
-	width: 900px;
+	width: 1300px;
 	background-color: #d9eaec;
 	height: 70px;
 	border: black solid 5px;
@@ -65,9 +64,8 @@ h1 {
     height: 100px;
 }
 #que {
-	text-transform: capitalize;
+	/* text-transform: uppercase; */
 	font-size: 27px;
-	/* height: 100px; */
 	 padding: 15px; 
      text-align: center;
 	margin: 20px auto;
@@ -132,7 +130,7 @@ h1 {
 .quenumber {
 	font-family: 'Alata', sans-serif;
     font-size: 30px;
-    margin: 0 250px;
+    margin: 0 450px;
 }
 
 .result-page{
@@ -151,9 +149,9 @@ h1 {
 .result-page .scoreboard{
     width: 80%;
     font-family: 'Alata', sans-serif;
-    font-size: 50px;
+    font-size: 20px;
     margin: 20px auto;
-    padding:20px;
+    padding:5px;
     border: 2px solid black;
     background: linear-gradient(to top, #00c6ff, #0072ff);
     border-radius:10px;
@@ -171,4 +169,46 @@ h1 {
     background: linear-gradient(to top, #00c6ff, #0072ff);
     border-radius:10px;
 
+}
+.home-page{
+	margin: 10px auto;
+	width: 900px;
+	background-color: #d9eaec;
+	height: 640px;
+	border: black solid 5px;
+	border-radius: 10px;
+	padding: 15px;
+}
+.intro{
+    font-size: 35px;
+	text-align: center;
+	margin: 30px auto;
+	font-family: 'Fredoka One', cursive; ;
+}
+.nametext{
+    font-family: 'Alata', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin: 30px auto;
+    
+}
+.namebox{
+    margin-left:200px ;
+    width: 450px;
+    height: 50px;
+    font-family: 'Alata', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    
+}
+.submit{
+    margin-left: 350px;
+    margin-top:30px ;
+    width: 20%;
+    font-family: 'Alata', sans-serif;
+    font-size: 20px;
+    padding:5px;
+    border: 2px solid black;
+    background: linear-gradient(to top, #00c6ff, #0072ff);
+    border-radius:10px;
 }

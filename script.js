@@ -84,8 +84,11 @@ let currentOptions = [];
 const randomQueAndAns = [];
 const quizPage = document.querySelector('.quiz-page');
 const resultPage = document.querySelector('.result-page');
+const homePage = document.querySelector('.home-page');
 const navNext= document.querySelector('.nav-next')
 const navPrev= document.querySelector('.nav-prev')
+const nameElement =document.querySelector('.namebox')
+let name
 const getRandomQueAndAns = () => {
 	for (let i = queAndAns.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
@@ -95,7 +98,12 @@ const getRandomQueAndAns = () => {
 		randomQueAndAns[j] = queAndAns[j];
 	}
 };
-
+const start =()=>{
+     name=nameElement.value
+     quizPage.classList.remove('invisible');
+     homePage.classList.add('invisible');
+     console.log(name)
+}
 let questionCount = 0;
 const fixQueAndAns = () => {
 	currentQueAndAns = randomQueAndAns[questionCount];

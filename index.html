@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>The Covid-19 Quiz</title>
 </head>
@@ -12,9 +11,27 @@
     <h1>
         The Covid-19 Quiz
     </h1>
+    <div class="container home-page ">
+      <div class="intro">
+          <div>
+            This quiz will show how well you know about the recent Coronavirus
+          </div>
+        </div>
+        <div>
+            <div class="nametext">Enter your name</div>
+                <input type="text" class="namebox">
+                <br>
+                <button  class="submit" onclick="start()">Submit</button>
+        </div>
+        <div class="intro">
+            <div>
+              Note the timer at the bottom
+            </div>
+          </div>
+        
 
-
-    <div class="container quiz-page">
+    </div>
+    <div class="container quiz-page invisible">
         <div class="info-box">
             <span class="score">Score - 0</span>
             <span class="quenumber"></span>
@@ -24,10 +41,6 @@
                 <div id="que"> </div>
             </div>
             <div class="options">
-                <!-- <button class="btn">russia</button>
-                <button class="btn">india</button>
-                <button class="btn">USA</button>
-                <button class="btn">Brazil</button> -->
             </div> 
             <div class="nav">
                 <button class="nav-next" onclick="nextQue()">Next</button> 
