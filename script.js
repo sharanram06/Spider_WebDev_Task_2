@@ -269,13 +269,15 @@ const endQuiz = () => {
 		timePerQuesElement.innerHTML=0
 	}
 	else{
-		timePerQuesElement.innerHTML = (180 - totalTime) / attempt;
+		let n=(180 - totalTime) / attempt
+		timePerQuesElement.innerHTML = n.toFixed(2) ;
 	}
 	if(attempt===correct){
      ratioElement.innerHTML=correct
 	}
 	else{
-	ratioElement.innerHTML = correct / (attempt - correct);
+		let k=correct / (attempt - correct)
+	ratioElement.innerHTML =k.toFixed(2) ;
 	}	
 	if (score >= parseInt(window.localStorage.getItem('highScore'))) {
 		userNameElement.innerHTML = name;
