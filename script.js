@@ -108,6 +108,27 @@ let attempt = 0;
 const attemptElement = document.querySelector('.resultattempt');
 let correct = 0;
 const correctElement = document.querySelector('.resultcorrect');
+let totalTime = 0;
+const totalTimeElement = document.querySelector('.resulttotaltime');
+let timePerQuestion = 0;
+const timePerQuesElement = document.querySelector('.resulttimeperquestion');
+let ratio = 0;
+const ratioElement = document.querySelector('.resultratio');
+const highScoreElement = document.querySelector('.resulthighscore');
+if (!window.localStorage.hasOwnProperty('highScore') || window.localStorage.getItem('highScore') == undefined) {
+	window.localStorage.setItem('highScore', '0');
+}
+if (
+	!window.localStorage.hasOwnProperty('timePerQuestion') ||
+	window.localStorage.getItem('timePerQuestion') == undefined
+) {
+	window.localStorage.setItem('timePerQuestion', '0');
+}
+if (!window.localStorage.hasOwnProperty('userName') || window.localStorage.getItem('userName') == undefined) {
+	window.localStorage.setItem('userName', '0');
+}
+let userName = 0;
+const userNameElement = document.querySelector('.resultusername');
 const options = document.querySelector('.options');
 let questionsRemaining = [];
 let currentQueAndAns;
@@ -122,7 +143,9 @@ const navPrev = document.querySelector('.nav-prev');
 const nameElement = document.querySelector('.namebox');
 const nameResult = document.querySelector('.nameresult');
 const circleContainer = document.querySelector('.circlecontainer');
-let timer = document.querySelector('.timer')
+let minute = 2;
+let sec = 59;
+let timer = document.querySelector('.timer');
 let name;
 const getRandomQueAndAns = () => {
 	for (let i = queAndAns.length - 1; i > 0; i--) {
@@ -132,7 +155,6 @@ const getRandomQueAndAns = () => {
 	for (j in queAndAns) {
 		randomQueAndAns[j] = queAndAns[j];
 	}
-	console.log(randomQueAndAns);
 	for (i = 0; i < 15; i++) {
 		for (j = 0; j < 4; j++) {
 			const optionElement = document.createElement('button');
@@ -155,7 +177,7 @@ const start = () => {
 		name = nameElement.value;
 		quizPage.classList.remove('invisible');
 		homePage.classList.add('invisible');
-		startTimer()
+		startTimer();
 	}
 };
 let questionCount = 0;
@@ -242,25 +264,50 @@ const endQuiz = () => {
 	scoreElement.innerHTML = score;
 	attemptElement.innerHTML = attempt;
 	correctElement.innerHTML = correct;
-};
-const startTimer = () => {
-	var minute = 2;
-	var sec = 59;
-	setInterval(function() {
-	  timer.innerHTML = minute + " : " + sec;
-	  sec--;
-
-	  if (minute == 0 && sec == 0) {
-		  endQuiz()
-		  console.log("jdd")
+	totalTimeElement.innerHTML = 180 - totalTime + ' sec';
+	timePerQuesElement.innerHTML = (180 - totalTime) / attempt;
+	if(attempt===correct){
+     ratioElement.innerHTML=correct
+	}
+	else{
+	ratioElement.innerHTML = correct / (attempt - correct);
+	}	
+	if (score >= parseInt(window.localStorage.getItem('highScore'))) {
+		userNameElement.innerHTML = name;
+		highScoreElement.innerHTML = score;
+		window.localStorage.setItem('userName', name);
+		window.localStorage.setItem('highScore', score);
+		window.localStorage.setItem('timePerQuestion', timePerQuestion);
+	} else if (score === parseInt(window.localStorage.getItem('highScore'))) {
+		if (timePerQuestion >= parseInt(window.localStorage.getItem('timePerQuestion'))) {
+			userNameElement.innerHTML = name;
+			highScoreElement.innerHTML = score;
+			window.localStorage.setItem('userName', name);
+			window.localStorage.setItem('highScore', score);
+			window.localStorage.setItem('timePerQuestion', timePerQuestion);
+		} else {
+			userNameElement.innerHTML = window.localStorage.getItem('userName');
+			highScoreElement.innerHTML = window.localStorage.getItem('highScore');
 		}
-	 else if (sec == 0) {
-			minute --;
+	} else {
+		userNameElement.innerHTML = window.localStorage.getItem('userName');
+		highScoreElement.innerHTML = window.localStorage.getItem('highScore');
+	}
+};
+
+const startTimer = () => {
+	setInterval(function() {
+		timer.innerHTML = minute + ' : ' + sec;
+		sec--;
+		totalTime = minute * 60 + sec;
+		if (minute == 0 && sec == 0) {
+			endQuiz();
+		} else if (sec == 0) {
+			minute--;
 			sec = 60;
-		  }
-	
+		}
 	}, 1000);
-}
+};
 const tryagain = () => {
 	location.reload();
 };
