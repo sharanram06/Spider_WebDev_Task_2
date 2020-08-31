@@ -16,7 +16,7 @@ body {
 		url('../Spider_WebDev_Task_2/image/Covid.png') 95% 85% no-repeat,
 		url('../Spider_WebDev_Task_2/image/Covid.png') 25% 100% no-repeat,
 		url('../Spider_WebDev_Task_2/image/Covid.png') 80% 5% no-repeat,
-        url('../Spider_WebDev_Task_2/image/Covid.png') 60% 95% no-repeat;
+		url('../Spider_WebDev_Task_2/image/Covid.png') 60% 95% no-repeat;
 
 	background-size: 300px;
 }
@@ -30,21 +30,21 @@ body {
 
 h1 {
 	text-transform: uppercase;
-    font-size: 50px;
+	font-size: 50px;
 	text-align: center;
 	margin: 30px auto;
 	font-family: 'Fredoka One', cursive;
 }
-h2{
-    text-transform: uppercase;
-    font-size: 30px;
+h2 {
+	text-transform: uppercase;
+	font-size: 30px;
 	text-align: center;
 	margin: 30px auto;
-	font-family: 'Fredoka One', cursive; 
+	font-family: 'Fredoka One', cursive;
 }
-.invisible{
-    display:none;
-} 
+.invisible {
+	display: none;
+}
 
 .quiz-page .queans-box {
 	margin: 10px auto;
@@ -57,11 +57,11 @@ h2{
 	padding: 15px;
 }
 .quiz-page .info-box {
-    margin: 0 auto;
+	margin: 0 auto;
 	font-family: 'Alata', sans-serif;
 	position: relative;
-    font-size: 18px;
-    font-weight: 800;
+	font-size: 18px;
+	font-weight: 800;
 	padding: 10px;
 	width: 55%;
 	background-color: #d9eaec;
@@ -69,51 +69,50 @@ h2{
 	border: black solid 5px;
 	border-radius: 10px;
 }
-.questions{
-    height: 100px;
+.questions {
+	height: 100px;
 }
 #que {
 	font-size: 27px;
-	 padding: 15px; 
-     text-align: center;
+	padding: 15px;
+	text-align: center;
 	margin: 20px auto;
 	font-family: 'Fredoka One', cursive;
 }
 .score {
 	font-family: 'Alata', sans-serif;
 	font-weight: 800;
-	position:absolute;
+	position: absolute;
 	font-size: 26px;
 	left: 45%;
 	top: 1%;
-    height: 40px;
-    margin-bottom: 20px;
-    
+	height: 40px;
+	margin-bottom: 20px;
 }
-.options{
-    margin:20px auto ;
+.options {
+	margin: 20px auto;
 }
 .options .btn {
 	width: 100%;
-    height: 50px;
-    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+	height: 50px;
+	background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
 	font-family: 'Alata', sans-serif;
-    font-size: 18px;
-    font-weight: 800;
+	font-size: 18px;
+	font-weight: 800;
 	margin: 10px auto;
 	text-transform: capitalize;
 	cursor: pointer;
 	border: 2px solid black;
 	border-radius: 5px;
 }
-.options .btn.green{
-    background: linear-gradient(to top, #52c234, #144602);
+.options .btn.green {
+	background: linear-gradient(to top, #52c234, #144602);
 }
-.options .btn.red{
-    background: linear-gradient(to top, #e52d27, #b31217);;
+.options .btn.red {
+	background: linear-gradient(to top, #e52d27, #b31217);
 }
-.options .btn.removepointer{
-    pointer-events: none;
+.options .btn.removepointer {
+	pointer-events: none;
 }
 
 .nav-next {
@@ -125,8 +124,8 @@ h2{
 	background-color: inherit;
 	width: 100px;
 	font-family: 'Alata', sans-serif;
-    border: 2px solid black;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
+	border: 2px solid black;
+	background: linear-gradient(to right, #00c6ff, #0072ff);
 }
 .nav-prev {
 	float: left;
@@ -137,24 +136,24 @@ h2{
 	background-color: inherit;
 	width: 100px;
 	font-family: 'Alata', sans-serif;
-    border: 2px solid black;
-    background: linear-gradient(to left, #00c6ff, #0072ff);
+	border: 2px solid black;
+	background: linear-gradient(to left, #00c6ff, #0072ff);
 }
 
 .quenumber {
 	font-family: 'Alata', sans-serif;
-	position:absolute;
+	position: absolute;
 	left: 800px;
-    display: none;
-    height: 40px;
-    font-size: 30px;
-    margin: 0 500px;
+	display: none;
+	height: 40px;
+	font-size: 30px;
+	margin: 0 500px;
 }
-.circlecontainer{
+.circlecontainer {
 	left: 0.5%;
-	position:absolute;
+	position: absolute;
 }
-.quecircles{
+.quecircles {
 	margin: 0 3px;
 	font-family: 'Alata', sans-serif;
 	height: 45px;
@@ -166,13 +165,12 @@ h2{
 	border-radius: 50%;
 	display: inline-block;
 }
-.bordercircle{
-
-    border: 2px solid #0072ff ;
+.bordercircle {
+	border: 3px solid #0072ff;
+	box-shadow: 2px 2px 4px black;
 }
 
-
-.result-page{
+.result-page {
 	margin: 10px auto;
 	width: 900px;
 	background-color: #d9eaec;
@@ -181,35 +179,34 @@ h2{
 	border-radius: 10px;
 	padding: 15px;
 }
-.result-page h1{
-    font-family:'Fredoka One', cursive ;
-    font-size: 50px;
+.result-page h1 {
+	font-family: 'Fredoka One', cursive;
+	font-size: 50px;
 }
-.result-page .scoreboard{
-    width: 80%;
-    font-family: 'Alata', sans-serif;
-    font-size: 20px;
-    margin: 20px auto;
-    padding:5px;
-    border: 2px solid black;
-    background: linear-gradient(to top, #00c6ff, #0072ff);
-    border-radius:10px;
+.result-page .scoreboard {
+	width: 80%;
+	font-family: 'Alata', sans-serif;
+	font-size: 20px;
+	margin: 20px auto;
+	padding: 5px;
+	border: 2px solid black;
+	background: linear-gradient(to top, #00c6ff, #0072ff);
+	border-radius: 10px;
 }
-.result-page .right{
-    float: right;
+.result-page .right {
+	float: right;
 }
-.tryagain{
-    float: right;
-    width: 20%;
-    font-family: 'Alata', sans-serif;
-    font-size: 20px;
-    padding:5px;
-    border: 2px solid black;
-    background: linear-gradient(to top, #00c6ff, #0072ff);
-    border-radius:10px;
-
+.tryagain {
+	float: right;
+	width: 20%;
+	font-family: 'Alata', sans-serif;
+	font-size: 20px;
+	padding: 5px;
+	border: 2px solid black;
+	background: linear-gradient(to top, #00c6ff, #0072ff);
+	border-radius: 10px;
 }
-.home-page{
+.home-page {
 	margin: 10px auto;
 	width: 900px;
 	background-color: #d9eaec;
@@ -218,42 +215,51 @@ h2{
 	border-radius: 10px;
 	padding: 15px;
 }
-.intro{
-    font-size: 35px;
+.intro {
+	font-size: 35px;
 	text-align: center;
 	margin: 30px auto;
-	font-family: 'Fredoka One', cursive; ;
+	font-family: 'Fredoka One', cursive;
 }
-.nametext{
-    font-family: 'Alata', sans-serif;
-    font-size: 40px;
-    text-align: center;
-    margin: 30px auto;
-    
+.nametext {
+	font-family: 'Alata', sans-serif;
+	font-size: 40px;
+	text-align: center;
+	margin: 30px auto;
 }
-.namebox{
-    margin-left:200px ;
-    width: 450px;
-    height: 50px;
-    font-family: 'Alata', sans-serif;
-    font-size: 40px;
-    text-transform: uppercase;
-    
+.namebox {
+	margin-left: 200px;
+	width: 450px;
+	height: 50px;
+	font-family: 'Alata', sans-serif;
+	font-size: 40px;
+	text-transform: uppercase;
 }
-.submit{
-    margin-left: 350px;
-    margin-top:30px ;
-    width: 20%;
-    font-family: 'Alata', sans-serif;
-    font-size: 20px;
-    padding:5px;
-    border: 2px solid black;
-    background: linear-gradient(to top, #00c6ff, #0072ff);
-    border-radius:10px;
+.submit {
+	margin-left: 350px;
+	margin-top: 30px;
+	width: 20%;
+	font-family: 'Alata', sans-serif;
+	font-size: 20px;
+	padding: 5px;
+	border: 2px solid black;
+	background: linear-gradient(to top, #00c6ff, #0072ff);
+	border-radius: 10px;
 }
-.greencircle{
-	background-color:#52c234 ;
+.greencircle {
+	background-color: #52c234;
 }
-.redcircle{
-	background-color:#e52d27;
+.redcircle {
+	background-color: #e52d27;
+}
+.nav{
+	position: relative;
+}
+.timer{
+	position: absolute;
+	top: 10px;
+	left: 45%;
+	font-family: 'Alata', sans-serif;
+	font-size: 40px;
+
 }

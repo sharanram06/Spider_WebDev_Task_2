@@ -67,7 +67,8 @@ const queAndAns = [
 		opt: [ 'Beijing', 'Shanghai', 'Wuhan', 'Tianjin' ]
 	},
 	{
-		que: 'About what percentage of infected people recover without needing hospital treatment according to the World Health Organisation website?',
+		que:
+			'About what percentage of infected people recover without needing hospital treatment according to the World Health Organisation website?',
 		ans: '80%',
 		opt: [ '60%', '70%', '80%', '90%' ]
 	},
@@ -84,7 +85,12 @@ const queAndAns = [
 	{
 		que: 'From where coronavirus got its name?',
 		ans: 'Due to their crown-like projections',
-		opt: [ 'Due to their leaf-like projections', 'Due to their crown-like projections', 'Due to their surface structure of bricks', 'None of the above' ]
+		opt: [
+			'Due to their leaf-like projections',
+			'Due to their crown-like projections',
+			'Due to their surface structure of bricks',
+			'None of the above'
+		]
 	},
 	{
 		que: 'By maintaining a distance of _____ from others when possible, people may limit the spread of the virus',
@@ -105,7 +111,7 @@ const correctElement = document.querySelector('.resultcorrect');
 const options = document.querySelector('.options');
 let questionsRemaining = [];
 let currentQueAndAns;
-let optionCounter=0
+let optionCounter = 0;
 let currentOptions = [];
 const randomQueAndAns = [];
 const quizPage = document.querySelector('.quiz-page');
@@ -114,8 +120,9 @@ const homePage = document.querySelector('.home-page');
 const navNext = document.querySelector('.nav-next');
 const navPrev = document.querySelector('.nav-prev');
 const nameElement = document.querySelector('.namebox');
-const nameResult = document.querySelector(".nameresult")
-const circleContainer = document.querySelector(".circlecontainer")
+const nameResult = document.querySelector('.nameresult');
+const circleContainer = document.querySelector('.circlecontainer');
+let timer = document.querySelector('.timer')
 let name;
 const getRandomQueAndAns = () => {
 	for (let i = queAndAns.length - 1; i > 0; i--) {
@@ -124,50 +131,49 @@ const getRandomQueAndAns = () => {
 	}
 	for (j in queAndAns) {
 		randomQueAndAns[j] = queAndAns[j];
-    }
-    console.log(randomQueAndAns)
-    for (i = 0; i < 15; i++) {
-           for(j=0;j<4;j++){
-            const optionElement = document.createElement('button');
-            optionElement.innerHTML = randomQueAndAns[i]["opt"][j];
-            optionElement.id=i
-            optionElement.className = 'btn';
-            optionElement.classList.add('invisible')
-            optionElement.setAttribute('onclick', 'checkAnswer(this)');
-            options.appendChild(optionElement);
-            optionCounter++}
+	}
+	console.log(randomQueAndAns);
+	for (i = 0; i < 15; i++) {
+		for (j = 0; j < 4; j++) {
+			const optionElement = document.createElement('button');
+			optionElement.innerHTML = randomQueAndAns[i]['opt'][j];
+			optionElement.id = i;
+			optionElement.className = 'btn';
+			optionElement.classList.add('invisible');
+			optionElement.setAttribute('onclick', 'checkAnswer(this)');
+			options.appendChild(optionElement);
+			optionCounter++;
 		}
+	}
 };
-const navQuestion=(circle)=>{
-	questionCount=circle.innerHTML - 1
+const navQuestion = (circle) => {
+	questionCount = circle.innerHTML - 1;
 	fixQueAndAns();
-}
+};
 const start = () => {
 	if (nameElement.value !== '') {
 		name = nameElement.value;
 		quizPage.classList.remove('invisible');
 		homePage.classList.add('invisible');
-		console.log(name);
+		startTimer()
 	}
 };
 let questionCount = 0;
 const fixQueAndAns = () => {
 	currentQueAndAns = randomQueAndAns[questionCount];
 	question.innerHTML = currentQueAndAns.que;
-	for(i=0;i<15;i++){
-		circleContainer.children[i].classList.remove("bordercircle")
+	for (i = 0; i < 15; i++) {
+		circleContainer.children[i].classList.remove('bordercircle');
 	}
-	circleContainer.children[questionCount].classList.add("bordercircle")
+	circleContainer.children[questionCount].classList.add('bordercircle');
 	questionNumber.innerHTML = questionCount + 1 + ' of 10';
-	for(i=0;i<60;i++){
-        if(parseInt(options.children[i].id)===questionCount){
-            options.children[i].classList.remove("invisible")    
-        }
-        else{
-            options.children[i].classList.add("invisible")
-
-        }
-    }
+	for (i = 0; i < 60; i++) {
+		if (parseInt(options.children[i].id) === questionCount) {
+			options.children[i].classList.remove('invisible');
+		} else {
+			options.children[i].classList.add('invisible');
+		}
+	}
 };
 const checkAnswer = (option) => {
 	attempt++;
@@ -176,25 +182,25 @@ const checkAnswer = (option) => {
 		correct++;
 		scoreText.innerHTML = 'Score - ' + score;
 		option.classList.add('green');
-		circleContainer.children[questionCount].classList.add("greencircle")
-		
+		circleContainer.children[questionCount].classList.add('greencircle');
 	} else {
 		option.classList.add('red');
-		circleContainer.children[questionCount].classList.add("redcircle")
-        console.log(questionCount)
-		for (i = questionCount*4; i < (questionCount*4)+ 4; i++) {
+		circleContainer.children[questionCount].classList.add('redcircle');
+		console.log(questionCount);
+		for (i = questionCount * 4; i < questionCount * 4 + 4; i++) {
 			if (options.children[i].innerHTML == currentQueAndAns.ans) {
 				options.children[i].classList.add('green');
 			}
 		}
-    }
-    removePointer();
+	}
+	removePointer();
 };
 const removePointer = () => {
-	for (i = questionCount*4; i < (questionCount*4)+ 4; i++) {
+	for (i = questionCount * 4; i < questionCount * 4 + 4; i++) {
 		options.children[i].classList.add('removepointer');
 	}
 };
+
 const nextQue = () => {
 	if (questionCount == 0) {
 		navPrev.classList.remove('invisible');
@@ -231,12 +237,30 @@ const prevQue = () => {
 };
 const endQuiz = () => {
 	quizPage.classList.add('invisible');
-    resultPage.classList.remove('invisible');
-    nameResult.innerHTML= "ScoreCard - " + name
+	resultPage.classList.remove('invisible');
+	nameResult.innerHTML = 'ScoreCard - ' + name;
 	scoreElement.innerHTML = score;
 	attemptElement.innerHTML = attempt;
 	correctElement.innerHTML = correct;
 };
+const startTimer = () => {
+	var minute = 2;
+	var sec = 59;
+	setInterval(function() {
+	  timer.innerHTML = minute + " : " + sec;
+	  sec--;
+
+	  if (minute == 0 && sec == 0) {
+		  endQuiz()
+		  console.log("jdd")
+		}
+	 else if (sec == 0) {
+			minute --;
+			sec = 60;
+		  }
+	
+	}, 1000);
+}
 const tryagain = () => {
 	location.reload();
 };
