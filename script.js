@@ -265,7 +265,12 @@ const endQuiz = () => {
 	attemptElement.innerHTML = attempt;
 	correctElement.innerHTML = correct;
 	totalTimeElement.innerHTML = 180 - totalTime + ' sec';
-	timePerQuesElement.innerHTML = (180 - totalTime) / attempt;
+	if(attempt===0){
+		timePerQuesElement.innerHTML=0
+	}
+	else{
+		timePerQuesElement.innerHTML = (180 - totalTime) / attempt;
+	}
 	if(attempt===correct){
      ratioElement.innerHTML=correct
 	}
